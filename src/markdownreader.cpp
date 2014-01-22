@@ -3,6 +3,8 @@
 #include <QByteArray>
 #include <QTextCodec> 
 
+#include <QDebug> 
+
 #include "markdownreader.h"
 #include "util.h" // for loadRawText
 
@@ -49,6 +51,9 @@ void MarkdownReader::parse(QString filename)
             // QString text = QString::fromUtf8(rawText);
 
             // TODO: hic sun leones... do the parsing
+            unsigned long extensions = 0;
+            char *out = extract_metadata_keys((char *)rawText.data(), extensions);
+            qDebug() << "out" << out;
 
 
         }

@@ -33,6 +33,8 @@
 /* This is the type used for the $$ pseudovariable passed to parents */
 #define YYSTYPE node *
 
+char *extract_metadata_keys(char *source, unsigned long extensions);
+
 /* Define a structure to simplify handling of links */
 struct link_data {
 	char *label;                /* if this is a reference link */

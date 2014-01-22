@@ -14,17 +14,20 @@ extern "C" PLUGIN_API QString FileFormatName();
 extern "C" PLUGIN_API QStringList FileExtensions();
 
 class QByteArray;
+class PageItem;
 
 class MarkdownGetText
 {
 public:
 	MarkdownGetText(const QString filename, const QString encoding, bool textOnly, gtWriter *writer);
+	MarkdownGetText(const QString filename, const QString encoding, PageItem *textItem, bool textOnly);
 	~MarkdownGetText();
 	void write();
 private:
 	QString filename;
 	QString encoding;
 	QString text;
+	PageItem *textItem;
 	gtWriter *writer;
 	bool textOnly;
 	void loadText();
