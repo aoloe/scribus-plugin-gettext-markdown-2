@@ -6,6 +6,8 @@
 #include "markdownreader.h"
 #include "util.h" // for loadRawText
 
+#include "parser.h"
+
 MarkdownReader::MarkdownReader(gtWriter *writer, QString encoding, bool textOnly)
 {
     this->writer = writer;
